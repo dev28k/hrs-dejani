@@ -1,0 +1,40 @@
+.container1 {
+  position: inherit;
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 75vh;
+  /* margin-top: -60px; */
+}
+
+.box1 {
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  /* margin: 0 2%; */
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+}
+
+.box1 > img {
+  width: 200%;
+  height: calc(100%);
+  object-fit: cover; 
+  transition: .5s;
+}
+
+.box1 > span {
+  font-size: 3.8vh;
+  display: block;
+  text-align: center;
+  height: 10vh;
+  line-height: 2.6;
+}
+
+.box1:hover { flex: 1 1 75%; }
+.box1:hover > img {
+  width: 100%;
+  height: 100%;
+}
+ 
