@@ -30,7 +30,7 @@ function RoomTable() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/roomList")
+      .get("https://dejaniresort.herokuapp.com/roomList")
       .then(function (response) {
         // handle success
         setData(response.data);
@@ -62,7 +62,7 @@ function RoomTable() {
     };
     // console.log({ val });
     const response = await axios.post(
-      "http://localhost:8081/deleteRoom",
+      "http://https://dejaniresort.herokuapp.com/deleteRoom",
       myObj,
       {
         headers: { "Content-Type": "application/json" },

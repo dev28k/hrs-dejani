@@ -8,7 +8,7 @@ export default function Rooms() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/roomList")
+      .get("https://dejaniresort.herokuapp.com/roomList")
       .then(function (response) {
         // handle success
         setData(response.data);
@@ -112,7 +112,7 @@ export default function Rooms() {
               })}
 
               {/* <!-- Pagination --> */}
-              <nav
+              {/* <nav
                 class="roberto-pagination wow fadeInUp mb-100"
                 data-wow-delay="1000ms"
               >
@@ -138,7 +138,7 @@ export default function Rooms() {
                     </a>
                   </li>
                 </ul>
-              </nav>
+              </nav> */}
             </div>
 
             <div class="col-12 col-lg-4">

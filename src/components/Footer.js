@@ -46,7 +46,7 @@ export default function Footer() {
                 <h5 className="widget-title">Social Connections</h5>
 
                 {/* <!-- Single Blog Area --> */}
-                <div className="latest-blog-area row col-md-12">
+                <div className="latest-blog-area row col-md-12 col-md-6">
                   <a
                     className="col-md-4"
                     href="https://api.whatsapp.com/send?phone=923554226006"

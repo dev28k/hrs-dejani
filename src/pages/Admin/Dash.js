@@ -2,7 +2,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import axios from "axios";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import Collapsible from "react-collapsible";
+// import Collapsible from "react-collapsible";
 import { useNavigate } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
@@ -44,7 +44,7 @@ export default function Dash() {
 
     // FETCHING VIDEO FROM SERVER
     axios
-      .get("http://localhost:8081/video", {
+      .get("https://dejaniresort.herokuapp.com/video", {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export default function Dash() {
 
     //FETCH SLIDER IMAGES
     axios
-      .get("http://localhost:8081/sliderImages")
+      .get("https://dejaniresort.herokuapp.com/sliderImages")
       .then(function (response) {
         // handle success
         setGetSliderImages(response.data);
@@ -105,7 +105,7 @@ export default function Dash() {
   // POST ROOM data to DATABASE
   async function insertRoom(values) {
     console.log(values);
-    await fetch("http://localhost:8081/roomInesrt", {
+    await fetch("https://dejaniresort.herokuapp.com/roomInesrt", {
       method: "POST",
       mode: "no-cors",
       body: values,
@@ -124,7 +124,7 @@ export default function Dash() {
 
     formData.append("video", videos);
 
-    await fetch("http://localhost:8081/videoUpload", {
+    await fetch("https://dejaniresort.herokuapp.com/videoUpload", {
       method: "POST",
       mode: "no-cors",
       body: formData,
@@ -139,28 +139,28 @@ export default function Dash() {
     // console.log(videos);
   }
 
-  function uploadSLiderImages() {
-    sliderImages.forEach(async (element) => {
-      const formData = new FormData();
-      formData.append("image", element.file);
-      formData.append("id", element.id);
+  // function uploadSLiderImages() {
+  //   sliderImages.forEach(async (element) => {
+  //     const formData = new FormData();
+  //     formData.append("image", element.file);
+  //     formData.append("id", element.id);
 
-      await fetch("http://localhost:8081/ImageUpload", {
-        method: "POST",
-        mode: "no-cors",
-        body: formData,
-      })
-        .then((response) => {
-          // console.log(response)
-          console.log("Record Stored");
-          // window.location.reload(true)
-          // var resp = response.json()
-        })
-        .catch((error) => console.log(error));
+  //     await fetch("http://localhost:8081/ImageUpload", {
+  //       method: "POST",
+  //       mode: "no-cors",
+  //       body: formData,
+  //     })
+  //       .then((response) => {
+  //         // console.log(response)
+  //         console.log("Record Stored");
+  //         // window.location.reload(true)
+  //         // var resp = response.json()
+  //       })
+  //       .catch((error) => console.log(error));
 
-      // console.log(element.file)
-    });
-  }
+  //     // console.log(element.file)
+  //   });
+  // }
 
   return (
     <Suspense>
@@ -347,7 +347,7 @@ export default function Dash() {
                 fetchedVideo.map((item) => {
                   var link = item.imageLink;
                   link = link.split("/");
-                  var img = "http://localhost:8081/vid/" + link[3];
+                  var img = "https://dejaniresort.herokuapp.com/vid/" + link[3];
                   // console.log(img)
                   return (
                     <div className="col-md-6">

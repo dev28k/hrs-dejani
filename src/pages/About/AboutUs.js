@@ -1,10 +1,31 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import ReactPlayer from "react-player";
-import video1 from "../../assets/videos/279260205_768440387497427_4665878944465848280_n.mp4";
+import axios from "axios";
 
 const ContactTab = React.lazy(() => import("../../components/ContactTab"));
 
 export default function AboutUs() {
+
+  const [videoName, setVideoName] = useState("");
+
+  useEffect(() => {
+    var link = [];
+    axios
+      .get("https://dejaniresort.herokuapp.com/video")
+      .then(function (response) {
+        // handle success
+        link = response.data[0].imageLink.split("/");
+        console.log(link);
+        setVideoName("https://dejaniresort.herokuapp.com/vid/" + link[3]);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+
+    // console.log(videoName)
+  }, [videoName]);
+
   return (
     <div>
       {/* <!-- Breadcrumb Area Start --> */}
@@ -50,7 +71,7 @@ export default function AboutUs() {
                 <div class="col-12">
                   <div class="single-thumb">
                     <ReactPlayer
-                      url={video1}
+                      url={videoName}
                       controls
                       playing={true}
                       width="100%"

@@ -27,7 +27,7 @@ export default function Signup() {
 
   const userRegister = async (value) => {
     // console.log(value)
-    const response = await axios.post("http://localhost:8081/register", value, {
+    const response = await axios.post("https://dejaniresort.herokuapp.com/register", value, {
       headers: { "Content-Type": "application/json" },
     });
 

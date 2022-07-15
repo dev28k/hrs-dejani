@@ -13,11 +13,12 @@ export default function MainCrousel() {
   useEffect(() => {
     var link = [];
     axios
-      .get("http://localhost:8081/video")
+      .get("https://dejaniresort.herokuapp.com/video")
       .then(function (response) {
         // handle success
         link = response.data[0].imageLink.split("/");
-        setVideoName("http://localhost:8081/vid/" + link[3]);
+        console.log(link);
+        setVideoName("https://dejaniresort.herokuapp.com/vid/" + link[3]);
       })
       .catch(function (error) {
         // handle error
