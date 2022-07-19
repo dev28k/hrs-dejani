@@ -1,4 +1,6 @@
 import React from "react";
+import { isMobile } from "react-device-detect";
+import Col from "react-bootstrap/Col";
 import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
@@ -13,8 +15,8 @@ export default function Footer() {
               <div className="single-footer-widget mb-80">
                 {/* <!-- Footer Logo --> */}
                 <img
-                  style={{ marginTop: "20%" }}
-                  src={require("../assets/bg-img/logoDejnaiFooter.png")}
+                  style={isMobile ? {marginLeft: '25%', marginTop: '10%', marginBottom: '-10%' } : { marginTop: "20%" }}
+                  src={require("../../assets/bg-img/logoDejnaiFooter.png")}
                   alt=""
                   width="155px"
                 />
@@ -29,8 +31,8 @@ export default function Footer() {
                 {/* <!-- Single Blog Area --> */}
                 <div className="latest-blog-area row col-md-12">
                   <h4 style={{ color: "#3DC4B9" }}>+92 355 4226006</h4>
-                  <span style={{ color: "#3DC4B9" }}>
-                    dejaniresort@gmail.com
+                  <span>
+                    <a href="mailto:dejaniresort@gmail.com"><span style={{ color: "#3DC4B9" }}>dejaniresort@gmail.com</span></a>
                   </span>
                   <span>
                     Astore Pakora,Deosai Rd Gb Gilgit, Gilgit-Baltistan-14300
@@ -40,7 +42,7 @@ export default function Footer() {
             </div>
 
             {/* <!-- Single Footer Widget Area --> */}
-            <div className="col-12 col-sm-6 col-lg-3">
+            <div className="col-12 col-sm-6 col-lg-3" style={{marginTop: '-10%'}}>
               <div className="single-footer-widget mb-80">
                 {/* <!-- Widget Title --> */}
                 <h5 className="widget-title">Social Connections</h5>
@@ -48,18 +50,21 @@ export default function Footer() {
                 {/* <!-- Single Blog Area --> */}
                 <div className="latest-blog-area row col-md-12 col-md-6">
                   <a
+                    style={{ width: "33%" }}
                     className="col-md-4"
                     href="https://api.whatsapp.com/send?phone=923554226006"
                   >
                     <FaWhatsapp color="green" size="25" />
                   </a>
                   <a
+                    style={{ width: "33%" }}
                     className="col-md-4"
                     href="https://www.instagram.com/dejani_resort"
                   >
                     <FaInstagram color="#E1306C" size="25" />
                   </a>
                   <a
+                    style={{ width: "33%" }}
                     className="col-md-4"
                     href="https://www.facebook.com/DeJani-Resort-Deosia-102902428056007"
                   >
@@ -70,7 +75,7 @@ export default function Footer() {
             </div>
 
             {/* <!-- Single Footer Widget Area --> */}
-            <div className="col-12 col-sm-4 col-lg-2">
+            <div className="col-12 col-sm-4 col-lg-2" style={{marginTop: '-10%'}}>
               <div className="single-footer-widget mb-80">
                 {/* <!-- Widget Title --> */}
                 <h5 className="widget-title">Links</h5>

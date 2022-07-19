@@ -2,6 +2,8 @@ import React, { useEffect, useState, Suspense } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ReactPlayer from "react-player";
+import { isMobile } from 'react-device-detect';
+import MobileGallery from './Gallery/MobileGallery';
 
 const SlideShow = React.lazy(() => import("./SlideShow"));
 const Gallery = React.lazy(() => import("./Gallery/Gallery"));
@@ -36,7 +38,7 @@ export default function MainCrousel() {
         style={{ backgroundColor: "rgb(231, 230, 251)" }}
       >
         {/* <!-- Hotel Search Form Area --> */}
-        <div className="hotel-search-form-area">
+        <div className="hotel-search-form-area" style={isMobile ? {marginTop: '22%'} : null}>
           <div className="container-fluid">
             <div
               className="hotel-search-form"
@@ -74,7 +76,7 @@ export default function MainCrousel() {
                       name="checkout-date"
                     />
                   </div>
-                  <div className="col-4 col-md-1">
+                  <div className="col-3 col-md-1">
                     <label
                       for="room"
                       style={{ color: "#fff", fontWeight: "bold" }}
@@ -101,7 +103,7 @@ export default function MainCrousel() {
                                     <option value="06">06</option>
                                 </select>
                             </div> */}
-                  <div className="col-4 col-md-2 col-lg-1">
+                  <div className="col-3 col-md-2 col-lg-1">
                     <label
                       for="children"
                       style={{ color: "#fff", fontWeight: "bold" }}
@@ -121,7 +123,7 @@ export default function MainCrousel() {
                       <option value="06">06</option>
                     </select>
                   </div>
-                  <div className="col-12 col-md-3">
+                  <div className="col-6 col-md-3">
                     <button
                       type="submit"
                       className="form-control roberto-btn w-100"
@@ -138,7 +140,7 @@ export default function MainCrousel() {
           </div>
         </div>
 
-        <div className="container mt-100">
+        <div className="container" style={isMobile ? {marginTop: '35%'} : null}>
           <div className="row align-items-center">
             <div className="col-md-5">
               {/* <!-- Section Heading --> */}
@@ -197,8 +199,12 @@ export default function MainCrousel() {
                                 </div>
                             </div> */}
 
-                  <div>
-                    <Gallery />
+                  <div className="col-md-12">
+                    {isMobile ? 
+                      <MobileGallery />
+                    : 
+                      <Gallery />
+                    }
                   </div>
                 </div>
               </div>

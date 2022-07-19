@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 const Header = React.lazy(() => import("./components/Header"));
 const Navbar = React.lazy(() => import("./components/Navbar"));
 const Home = React.lazy(() => import("./pages/HomePage/Home"));
-const Footer = React.lazy(() => import("./components/Footer"));
+const Footer = React.lazy(() => import("./components/Footer/Footer"));
 const Rooms = React.lazy(() => import("./pages/Rooms/Rooms"));
 const SingleRoom = React.lazy(() => import("./pages/Rooms/SingleRoom"));
 const ContactUs = React.lazy(() => import("./pages/ContactUs/ContactUs"));

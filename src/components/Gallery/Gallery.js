@@ -15,7 +15,7 @@ export default function Gallery() {
         <div class="container1">
           <div class="box1">
             <img src={img1} />
-            {/* <span>CSS</span> */}
+            {/* <span>CSS</span> */}SlideShow
           </div>
           <div class="box1">
             <img src={img2} />
